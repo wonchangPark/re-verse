@@ -183,7 +183,7 @@
 | 이름   | 담당  | 역할 | 코드명 |
 | :------: | :------: | :----: | :-----: |
 | 정기연 | BackEnd | 팀장 | ㈜꿀㉴탕소매넣기 |
-| 박원창 | BackEnd | 팀원 | oO강약약강Oo |
+| 박원창 | BackEnd | 팀원 | oOsnowmanOo |
 | 전윤선 | FrontEnd | 팀원 | zl존윤sun |
 | 정윤영 | BackEnd  | 팀원 | S2ㅉ6구천사S2 |
 | 조혜은 | BackEnd  | 팀원 | KIN거운KAN쵸 |
