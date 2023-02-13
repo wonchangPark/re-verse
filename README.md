@@ -178,7 +178,7 @@
 
 ## 🙂 팀원 소개
 
-> [RE-VERSE NOTION](https://re-verse.notion.site/RE-VERSE-caf272f1085e4508bf2a14541a4d0c9a)
+> [RE-VERSE NOTION](https://happy-coding.notion.site/happy-coding/RE-VERSE-14a24d298aaa41c5a737c3c6b4cf3fca)
 
 | 이름   | 담당  | 역할 | 코드명 |
 | :------: | :------: | :----: | :-----: |
