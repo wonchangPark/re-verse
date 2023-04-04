@@ -10,7 +10,8 @@ import kr.co.reverse.archive.api.service.FriendService;
 import kr.co.reverse.archive.api.service.UserService;
 import kr.co.reverse.archive.common.exception.AlreadyFriendException;
 import kr.co.reverse.archive.common.exception.NotFriendException;
-import kr.co.reverse.archive.db.entity.*;
+import kr.co.reverse.archive.db.entity.Archive;
+import kr.co.reverse.archive.db.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +49,7 @@ public class FriendController {
         User user = userService.getPlayer(userId);
         User target = userService.getUserByNickname(friendInvitationReq.getNickname());
 
-        if(!friendService.checkFriend(user, target)){
+        if (!friendService.checkFriend(user, target)) {
             throw new AlreadyFriendException();
         }
 
@@ -58,7 +59,7 @@ public class FriendController {
 
             return ResponseEntity.status(HttpStatus.CREATED).build();
 
-        }  else {
+        } else {
 
             friendService.createFriendInvitation(user, target);
         }
@@ -120,10 +121,11 @@ public class FriendController {
         String userId = userService.getUserId();
         User user = userService.getPlayer(userId);
         Archive archive = archiveService.getArchive(bookmarkReq.getArchiveId());
+
         User target = userService.getPlayer(archive.getOwnerId().toString());
 
         // 친구인지 체크
-        if(friendService.checkFriend(user, target)){
+        if (friendService.checkFriend(user, target)) {
             throw new NotFriendException();
         }
 
@@ -182,12 +184,12 @@ public class FriendController {
         User target = userService.getUserByNickname(nickname);
         Archive archive = archiveService.getArchive(archiveId);
 
-        if(user.getNickname().equals(target.getNickname())){
+        if (user.getNickname().equals(target.getNickname())) {
             friendService.deleteArchiveMember(archive, target);
 
         } else if (friendService.checkFriend(user, target)) {
-                throw new NotFriendException();
-        } else{
+            throw new NotFriendException();
+        } else {
             friendService.deleteArchiveMember(archive, target);
         }
 
