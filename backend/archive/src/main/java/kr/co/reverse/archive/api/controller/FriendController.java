@@ -129,6 +129,7 @@ public class FriendController {
             throw new NotFriendException();
         }
 
+
         friendService.createBookmark(archive, user);
 
         return ResponseEntity.status(HttpStatus.OK).build();
