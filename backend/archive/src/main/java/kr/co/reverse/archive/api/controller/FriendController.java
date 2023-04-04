@@ -120,6 +120,12 @@ public class FriendController {
         String userId = userService.getUserId();
         User user = userService.getPlayer(userId);
         Archive archive = archiveService.getArchive(bookmarkReq.getArchiveId());
+        User target = userService.getPlayer(archive.getOwnerId().toString());
+
+        // 친구인지 체크
+        if(friendService.checkFriend(user, target)){
+            throw new NotFriendException();
+        }
 
         friendService.createBookmark(archive, user);
 
